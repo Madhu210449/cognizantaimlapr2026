@@ -17,6 +17,10 @@ def calculate_normal_distribution():
 def plot_normal_distribution(x, pdf, mean, std_dev):
     plt.figure(figsize=(10, 6))
     plt.plot(x, pdf, color='blue', label='Normal Distribution')
+    #plot histogram of scores
+    data = pd.read_csv(Config().csv_path)
+    scores = data['Score']
+    plt.hist(scores, bins=20, density=True, alpha=0.6, color='orange', label='Trainees Scores')
     plt.title(f'Normal Distribution of Trainees Scores\nMean: {mean:.2f}, Std Dev: {std_dev:.2f}')
     plt.xlabel('Scores')
     plt.ylabel('Probability Density')
