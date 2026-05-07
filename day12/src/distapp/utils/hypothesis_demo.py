@@ -11,7 +11,6 @@ def hypothesis_test():
     #calculate hypothesis using sample mean, population mean, standard deviation and sample size
     sample_mean_ai = ai_assisted.mean()
     sample_mean_human = human.mean()
-    population_mean = 0
     std_ai = ai_assisted.std()
     std_human = human.std()
     n_ai = len(ai_assisted) 
