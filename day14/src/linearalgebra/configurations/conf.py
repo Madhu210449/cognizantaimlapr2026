@@ -1,0 +1,12 @@
+#read path from .env file
+import os
+from dotenv import load_dotenv
+env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+
+# Load environment variables from .env file
+load_dotenv(env_path)
+
+# Get the weather path from environment variables
+class Config:
+    #static variable to hold the weather path
+    weather_path = os.getenv('weather_path')

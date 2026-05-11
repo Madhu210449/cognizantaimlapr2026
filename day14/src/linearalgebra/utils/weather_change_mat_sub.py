@@ -1,5 +1,7 @@
 #weather change matrix and subtract it from the image
 import numpy as np
+import pandas as pd
+from linearalgebra.configurations.conf import Config
 def weather_change_mat_sub(image, weather_change_mat):
     #check if the weather change matrix is the same size as the image
     if weather_change_mat.shape != image.shape:
@@ -9,8 +11,18 @@ def weather_change_mat_sub(image, weather_change_mat):
     return result.astype(np.uint8)
 if __name__ == "__main__":
     #test the function
-    
-    result = weather_change_mat_sub(image, weather_change_mat)
-    print("Original Image:\n", image)
+    weather_path = Config.weather_path
+    df=pd.read_csv(weather_path)
+    #create 3x3 matrix using temperature change, humidity and pressure change
+    #only take the first 3 rows of the dataframe
+    df = df.head(3)
+    weather_mat = df[['temperature_c', 'humidity_percent', 'pressure_hpa']].values
+    #create matrix with temperature change
+    weather_change_mat = df[['temperature_change_c']].values
+    #create unity matrix of size 3x3
+    unity_mat = np.ones((weather_mat.shape))*weather_change_mat
+
+    result = weather_change_mat_sub(weather_mat, unity_mat)
+    print("Original Image:\n", weather_mat)
     print("Weather Change Matrix:\n", weather_change_mat)
     print("Resulting Image:\n", result)

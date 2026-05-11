@@ -5,3 +5,8 @@ src/linearalgebra.egg-info/SOURCES.txt
 src/linearalgebra.egg-info/dependency_links.txt
 src/linearalgebra.egg-info/requires.txt
 src/linearalgebra.egg-info/top_level.txt
+src/linearalgebra/configurations/__init__.py
+src/linearalgebra/configurations/conf.py
+src/linearalgebra/utils/__init__.py
+src/linearalgebra/utils/image_brightness_mat_add.py
+src/linearalgebra/utils/weather_change_mat_sub.py
