@@ -1,0 +1,7 @@
+pyproject.toml
+src/linearalgebra/__init__.py
+src/linearalgebra.egg-info/PKG-INFO
+src/linearalgebra.egg-info/SOURCES.txt
+src/linearalgebra.egg-info/dependency_links.txt
+src/linearalgebra.egg-info/requires.txt
+src/linearalgebra.egg-info/top_level.txt
