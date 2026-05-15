@@ -11,7 +11,9 @@ def bigosort(url):
         #separate body key from posts json and append the values to body_data list
         for post in posts:
             body_data.append(post['body'])
-        
+        #sort the body_data list using bigosort algorithm
+        body_data.sort()
+               
         return body_data
    else:
         print("Failed to fetch posts")
@@ -21,4 +23,5 @@ if __name__ == "__main__":
     url = Config.api_url
     posts= bigosort(url)
     #print the sorted posts
-    print(posts)
+    for post in posts:
+        print(post+"\n")
