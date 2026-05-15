@@ -24,3 +24,4 @@ class Config:
     score_path = os.getenv('score_path')
     search_page_path = os.getenv('search_page_path')
     api_url = os.getenv('api_url')
+    product_path = os.getenv('product_path')
