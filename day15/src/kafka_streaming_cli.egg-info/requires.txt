@@ -18,6 +18,8 @@ certifi>=2024.0.0
 ydata-profiling>=4.0
 setuptools>=65.0
 sweetviz>=2.1
+dtale>=2.0.0
+pandas-profiling>=3.0.0
 
 [dev]
 pytest>=8.0.0

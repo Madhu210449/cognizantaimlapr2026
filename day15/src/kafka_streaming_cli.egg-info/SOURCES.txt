@@ -18,7 +18,11 @@ src/kafkamessageapp/services/__init__.py
 src/kafkamessageapp/services/customer_service.py
 src/kafkamessageapp/services/customer_service_impl.py
 src/kafkamessageapp/utils/__init__.py
+src/kafkamessageapp/utils/dist_profile.py
+src/kafkamessageapp/utils/dtale_demo.py
 src/kafkamessageapp/utils/gepipelineapp.py
 src/kafkamessageapp/utils/kafka_consumer.py
 src/kafkamessageapp/utils/kafka_producer.py
 src/kafkamessageapp/utils/mlpipeline.py
+src/kafkamessageapp/utils/sweetviz_demo.py
+src/kafkamessageapp/utils/ydata_profiling_demo.py

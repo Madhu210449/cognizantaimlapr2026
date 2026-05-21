@@ -1,7 +1,6 @@
 # Install first
 # pip install sweetviz
 
-from dacite import Config
 import pandas as pd
 import sweetviz as sv
 from kafkamessageapp.configurations.conf import KafkaConfig
@@ -11,9 +10,9 @@ from sklearn.model_selection import train_test_split
 df = pd.read_csv(KafkaConfig.pizza_path)
 
 # ── 2. Basic report with target feature highlighted ───────
-report = sv.analyze(df, target_feat="churned")
+report = sv.analyze(df, target_feat="pizza_rate")
 report.show_html(KafkaConfig.sweetviz_report_path)      # opens in browser automatically
-
+'''
 # ── 3. Train / test comparison ────────────────────────────
 train, test = train_test_split(df, test_size=0.2, random_state=42)
 
@@ -36,3 +35,4 @@ seg.show_html("segment_compare.html")
 
 # ── 5. Jupyter — render inline instead of browser tab ─────
 # report.show_notebook()
+'''
