@@ -21,7 +21,7 @@ def create_decision_tree_model():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
     # Create and fit the Decision Tree model
-    model = DecisionTreeClassifier(random_state=42)
+    model = DecisionTreeClassifier(criterion='gini', max_depth=3, random_state=42)
     model.fit(X_train, y_train)
     
     # Make predictions on the test set
@@ -37,3 +37,6 @@ def create_decision_tree_model():
     print(report)
     print('Confusion Matrix:')
     print(confusion)
+
+if __name__ == "__main__":
+    create_decision_tree_model()
