@@ -4,7 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from supervisedmlapp.configurations.conf import LOAN_FILE_PATH  
-
+from sklearn.tree import plot_tree
+import matplotlib.pyplot as plt
 def create_decision_tree_model():
     # Load the dataset
     data = pd.read_csv(LOAN_FILE_PATH)
@@ -36,6 +37,11 @@ def create_decision_tree_model():
     print(report)
     print('Confusion Matrix:')
     print(confusion)
+    #draw the decision tree with all the features and class names
+    
+    plt.figure(figsize=(10,10))
+    plot_tree(model, feature_names=X.columns, class_names=['Not Approved', 'Approved'], filled=True)
+    plt.show()
 
 if __name__ == "__main__":
     create_decision_tree_model()
