@@ -21,7 +21,7 @@ def simple_nn_process():
     #label encoding for loan_status
     data['LoanStatus'] = data['LoanStatus'].map({'Rejected': 0, 'Approved': 1})
     #identify x and y
-    x=data.drop('LoanStatus',axis=1)
+    x=data.drop(['LoanStatus','ApplicantID'],axis=1)
     y=data['LoanStatus']
     #apply standard scalar
     scaler=StandardScaler()
